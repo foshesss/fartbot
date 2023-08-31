@@ -1,0 +1,31 @@
+.leaderboard__header {
+    font-weight: 900;
+    text-align: center;
+}
+
+.leaderboard-entry {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaderboard-entry img {
+    width: 45px;
+    border-radius: 100px;
+}
+
+.leaderboard {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.leaderboard__user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

@@ -12,16 +12,29 @@ def file_exists(file_name: str):
 DB_LOCATION = "/home/pi/projects/fartbot/fartstreak.db"
 
 @app.route("/")
-def main():
+def index():
+    return render_template("home.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/events")
+def events():
+    return render_template("events.html")
+
+@app.route("/merch")
+def merch():
+    return render_template("merch.html")
+
+@app.route("/leaderboard")
+def leaderboard():
     res = None # pre-define for scope
 
     # used for people testing without sqlite DB
     if file_exists(DB_LOCATION) == True:
         cur = sqlite3.connect(DB_LOCATION).cursor()
         res = cur.execute('SELECT * FROM fartstreak').fetchall()
-
-        #print(type(out))
-        #print(type(rend))
     else:
         # example.json should always exist
         f = open("example.json")
@@ -32,7 +45,8 @@ def main():
     out = rend[::-1]
 
     # see README for 'out' json format
-    return render_template("main.html", Database = out)
+    return render_template("leaderboard.html", Database = out)
+
 
 if __name__ == '__main__':
     from waitress import serve

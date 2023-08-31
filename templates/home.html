@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fart Club - Home</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='home.css') }}"
+    />
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <div class="home-hero">
+        <h1>Laugh. Release. Unite.</h1>
+        <p>
+            We are the fart club at the University of Maryland, College Park! We have a focus on
+            bringing unique people together for collaboration and social events. We aim to 
+            push the boundaries of possibility through our unique presence at UMD.
+        </p>
+    </div>
+
+    <div class="home-section">
+        <h2>I'm new! What do I do?</h2>
+        <p>
+            The beauty of Fart Club is that you make what you want of it. A couple of 
+            things that you can do to get started are:
+        </p>
+        <ul>
+            <li>Join the Discord and meet the club members.</li>
+            <li>Get seen on the leaderboard! You can appear on the
+                <a href="/leaderboard">leaderboard</a> by posting 'fart club' in 
+                the #fart-club channel on Discord.
+            </li>
+            <li>Attend events! Our next major event is the <a href="/events">Fart Club Formal</a>, to be hosted in Fall of 2023.</li>
+        </ul>
+    </div>
+</body>
+</html>

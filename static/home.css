@@ -1,0 +1,11 @@
+.home-hero {
+    background: linear-gradient(217deg, #FFD1A1, rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, #AEDFF7, rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, #FFA4A4, rgba(0,0,255,0) 70.71%);
+    padding: 5rem 1rem;
+}
+
+
+.home-section {
+    padding: 3rem 1rem;
+}

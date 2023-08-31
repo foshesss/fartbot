@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fart Club - Streaks</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='leaderboard.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.freepnglogos.com/uploads/poop-png/poop-emojis-archives-jason-graham-4.png"
+    />
+  </head>
+  <body>
+    {% block content %}
+
+    {% include 'nav.html' %}
+
+    <div class="leaderboard__container">
+      <div class="leaderboard__header">
+        <h1>FART CLUB LEADERBOARD</h1>
+        <p>In the Discord of Fart Club, each post is a symphony of commitment.</p>
+      </div>
+
+
+      <div class="leaderboard">
+        {%for row in Database%}
+        <div class="leaderboard-entry">
+          <p>{{ loop.index }}.</p>
+          <div class="leaderboard__user-info">
+            <!-- profile pic -->
+            <img src="{{ row[7] }}" alt="{{ row[8] }}'s profile picture">
+    
+            <!-- username -->
+            <p>
+              {{ row[8] }}
+            </p>
+          </div>
+  
+          <!-- total days -->
+          <p>
+            {{ row[9] }}
+          </p>
+  
+          <!-- current streak -->
+          <p>
+            {{ row[6] }}
+          </p>
+  
+          <!-- longest streak -->
+          <p>
+            {{ row[5] }}
+          </p>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
